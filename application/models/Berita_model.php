@@ -13,7 +13,7 @@ class Berita_model extends CI_Model
   public function get_berita($limit, $start)
   {
     $this->db->select('berita.*,
-    category.category_name, user.user_name');
+    category.category_name, user.fullname');
     $this->db->from('berita');
     // Join
     $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -27,7 +27,7 @@ class Berita_model extends CI_Model
   //Total Berita Main Page
   public function total_row()
   {
-    $this->db->select('berita.*,category.category_name, user.user_name');
+    $this->db->select('berita.*,category.category_name, user.fullname');
     $this->db->from('berita');
     // Join
     $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -68,7 +68,7 @@ class Berita_model extends CI_Model
   //listing Berita Main Page
   public function berita($limit, $start)
   {
-    $this->db->select('berita.*,category.category_name, category.category_slug, user.user_name');
+    $this->db->select('berita.*,category.category_name, category.category_slug, user.fullname');
     $this->db->from('berita');
     // Join
     $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -82,7 +82,7 @@ class Berita_model extends CI_Model
   }
   public function berita_home()
   {
-    $this->db->select('berita.*,category.category_name, user.user_name');
+    $this->db->select('berita.*,category.category_name, user.fullname');
     $this->db->from('berita');
     // Join
     $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -97,7 +97,7 @@ class Berita_model extends CI_Model
   //Total Berita Main Page
   public function total()
   {
-    $this->db->select('berita.*,category.category_name, user.user_name');
+    $this->db->select('berita.*,category.category_name, user.fullname');
     $this->db->from('berita');
     // Join
     $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -111,7 +111,7 @@ class Berita_model extends CI_Model
   //Read Berita
   public function read($berita_slug)
   {
-    $this->db->select('berita.*,category.category_name, user.user_name');
+    $this->db->select('berita.*,category.category_name, user.fullname');
     $this->db->from('berita');
     // Join
     $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -141,7 +141,7 @@ class Berita_model extends CI_Model
   // Category
   public function category($category_id, $limit, $start)
   {
-    $this->db->select('berita.*,category.category_name, category.category_slug, user.user_name');
+    $this->db->select('berita.*,category.category_name, category.category_slug, user.fullname');
     $this->db->from('berita');
     // Join
     $this->db->join('category', 'category.id = berita.category_id', 'LEFT');
@@ -155,7 +155,7 @@ class Berita_model extends CI_Model
   }
   public function total_row_category($category_id)
   {
-    $this->db->select('berita.*,category.category_name, user.user_name');
+    $this->db->select('berita.*,category.category_name, user.fullname');
     $this->db->from('berita');
     // Join
     $this->db->join('category', 'category.id = berita.category_id', 'LEFT');

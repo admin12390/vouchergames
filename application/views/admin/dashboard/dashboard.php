@@ -7,9 +7,9 @@
                 <div class="row align-items-center">
                     <div class="col mr-2">
 
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($transaksi); ?></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo count($transaction); ?></div>
                         <div class="mt-2 mb-0 text-muted text-xs">
-                            <a href="<?php echo base_url('admin/transaksi'); ?>" style="color:#fff;text-decoration:none;">
+                            <a href="<?php echo base_url('admin/transaction'); ?>" style="color:#fff;text-decoration:none;">
                                 <span class="text-white mr-2"><i class="fas fa-arrow-right"></i> </span>
                                 <span>Lihat Data Transaksi</span>
                             </a>
@@ -72,7 +72,7 @@
         <div class="card">
             <div class="card-header bg-white py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Transaksi Terbaru</h6>
-                <a class="m-0 float-right btn btn-danger btn-sm" href="<?php echo base_url('admin/transaksi'); ?>">Lihat Semua <i class="fas fa-chevron-right"></i></a>
+                <a class="m-0 float-right btn btn-danger btn-sm" href="<?php echo base_url('admin/transaction'); ?>">Lihat Semua <i class="fas fa-chevron-right"></i></a>
             </div>
             <div class="table-responsive">
                 <table class="table align-items-center table-flush">
@@ -86,23 +86,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($new_transaksi as $new_transaksi) : ?>
+                        <?php foreach ($new_transaction as $new_transaction) : ?>
                             <tr>
-                                <td><?php echo date('d/m/Y', strtotime($new_transaksi->date_created)); ?></td>
-                                <td><?php echo $new_transaksi->user_name; ?></td>
-                                <td><?php echo $new_transaksi->user_phone; ?></td>
+                                <td><?php echo date('d/m/Y', strtotime($new_transaction->date_created)); ?></td>
+                                <td><?php echo $new_transaction->user_name; ?></td>
+                                <td><?php echo $new_transaction->user_phone; ?></td>
                                 <td>
-                                    <?php if ($new_transaksi->status_bayar == 'Pending') : ?>
-                                        <div class="badge badge-warning"><?php echo $new_transaksi->status_bayar; ?></div>
-                                    <?php elseif ($new_transaksi->status_bayar == 'Process') : ?>
-                                        <div class="badge badge-primary"><?php echo $new_transaksi->status_bayar; ?></div>
-                                    <?php elseif ($new_transaksi->status_bayar == 'Done') : ?>
-                                        <div class="badge badge-success"><?php echo $new_transaksi->status_bayar; ?></div>
+                                    <?php if ($new_transaction->status_bayar == 'Pending') : ?>
+                                        <div class="badge badge-warning"><?php echo $new_transaction->status_bayar; ?></div>
+                                    <?php elseif ($new_transaction->status_bayar == 'Process') : ?>
+                                        <div class="badge badge-primary"><?php echo $new_transaction->status_bayar; ?></div>
+                                    <?php elseif ($new_transaction->status_bayar == 'Done') : ?>
+                                        <div class="badge badge-success"><?php echo $new_transaction->status_bayar; ?></div>
                                     <?php else : ?>
-                                        <div class="badge badge-danger"><?php echo $new_transaksi->status_bayar; ?></div>
+                                        <div class="badge badge-danger"><?php echo $new_transaction->status_bayar; ?></div>
                                     <?php endif; ?>
                                 </td>
-                                <td><a href="<?php echo base_url('admin/transaksi/detail/') . $new_transaksi->id; ?>" class="btn btn-sm btn-primary" target="blank">Detail</a></td>
+                                <td><a href="<?php echo base_url('admin/transaction/detail/') . $new_transaction->id; ?>" class="btn btn-sm btn-primary" target="blank">Detail</a></td>
                             </tr>
 
                         <?php endforeach; ?>

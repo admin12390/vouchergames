@@ -10,7 +10,7 @@ if ($this->session->flashdata('message')) {
         <div class="card">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
                 Pengaturan Email <?php echo $email_register->name; ?>
-                <a href="<?php echo base_url('admin/pengaturan/update/' . $email_register->id); ?>" class="btn btn-info btn-sm"> Email Register</a>
+                <a href="<?php echo base_url('admin/setting/update/' . $email_register->id); ?>" class="btn btn-info btn-sm"> Email Register</a>
             </div>
             <div class="card-body">
 
@@ -26,7 +26,7 @@ if ($this->session->flashdata('message')) {
         <div class="card">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
                 Pengaturan Email <?php echo $email_order->name; ?>
-                <a href="<?php echo base_url('admin/pengaturan/update/' . $email_order->id); ?>" class="btn btn-info btn-sm"> Email Order</a>
+                <a href="<?php echo base_url('admin/setting/update/' . $email_order->id); ?>" class="btn btn-info btn-sm"> Email Order</a>
             </div>
             <div class="card-body">
 
@@ -38,7 +38,7 @@ if ($this->session->flashdata('message')) {
             </div>
         </div>
     </div>
-    <div class="col-md-4 mb-3">
+    <!-- <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-header">
                 Pengaturan Pembayaran
@@ -72,9 +72,9 @@ if ($this->session->flashdata('message')) {
 
                             <td width="20%">
                                 <?php if ($data->status == 0) : ?>
-                                    <a class="btn btn-success btn-sm btn-block" href="<?php echo base_url('admin/pengaturan/payment_active/' . $data->id); ?>"><i class="fas fa-check"></i></a>
+                                    <a class="btn btn-success btn-sm btn-block" href="<?php echo base_url('admin/setting/payment_active/' . $data->id); ?>"><i class="fas fa-check"></i></a>
                                 <?php else : ?>
-                                    <a class="btn btn-danger btn-sm btn-block" href="<?php echo base_url('admin/pengaturan/payment_inactive/' . $data->id); ?>"><i class="fas fa-times"></i></a>
+                                    <a class="btn btn-danger btn-sm btn-block" href="<?php echo base_url('admin/setting/payment_inactive/' . $data->id); ?>"><i class="fas fa-times"></i></a>
                                 <?php endif; ?>
 
                             </td>
@@ -91,7 +91,7 @@ if ($this->session->flashdata('message')) {
 
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="col-md-4 mb-3">
         <div class="card">
             <div class="card-header">
@@ -128,9 +128,9 @@ if ($this->session->flashdata('message')) {
 
                             <td width="20%">
                                 <?php if ($data->status == 0) : ?>
-                                    <a class="btn btn-success btn-sm btn-block" href="<?php echo base_url('admin/pengaturan/sendemail_active/' . $data->id); ?>"><i class="fas fa-times"></i></a>
+                                    <a class="btn btn-success btn-sm btn-block" href="<?php echo base_url('admin/setting/sendemail_active/' . $data->id); ?>"><i class="fas fa-times"></i></a>
                                 <?php else : ?>
-                                    <a class="btn btn-danger btn-sm btn-block" href="<?php echo base_url('admin/pengaturan/sendemail_inactive/' . $data->id); ?>"><i class="fas fa-times"></i></a>
+                                    <a class="btn btn-danger btn-sm btn-block" href="<?php echo base_url('admin/setting/sendemail_inactive/' . $data->id); ?>"><i class="fas fa-times"></i></a>
                                 <?php endif; ?>
 
                             </td>

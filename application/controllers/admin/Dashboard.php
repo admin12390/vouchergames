@@ -14,21 +14,21 @@ class Dashboard extends CI_Controller
   {
     parent::__construct();
     $this->load->model('user_model');
-    $this->load->model('transaksi_model');
+    $this->load->model('transaction_model');
   }
   public function index()
   {
     $user_member                  = $this->user_model->user_member();
-    $transaksi                    = $this->transaksi_model->get_alltransaksi();
-    $new_transaksi                = $this->transaksi_model->new_transaksi();
+    $transaction                    = $this->transaction_model->get_alltransaction();
+    $new_transaction                = $this->transaction_model->new_transaction();
     $list_user                    = $this->user_model->listUser();
     $count_user                   = $this->user_model->listUser();
     $data = [
       'title'                     => 'Dashboard',
       'list_user'                 => $list_user,
       'user_member'               => $user_member,
-      'transaksi'                 => $transaksi,
-      'new_transaksi'             => $new_transaksi,
+      'transaction'                 => $transaction,
+      'new_transaction'             => $new_transaction,
       'count_user'                => $count_user,
       'content'                   => 'admin/dashboard/dashboard'
     ];

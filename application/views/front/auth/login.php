@@ -6,7 +6,8 @@
             <div class="card-body">
                 <div class="text-muted">
                     <h1 class="h4 mb-4"><i class="bi-box-arrow-in-right" style="font-size: 2rem;"></i> Silahkan Login!</h1>
-                    <!-- <?php echo $this->session->flashdata('message'); ?> -->
+                    <?php echo $this->session->flashdata('message');
+                    $this->session->unset_userdata('message'); ?>
                 </div>
                 <?php
                 echo form_open_multipart('auth',  array('class' => 'needs-validation', 'novalidate' => 'novalidate'))
@@ -25,12 +26,12 @@
                 </button>
 
                 <?php echo form_close() ?>
-              
-                
-                
+
+
+
 
             </div>
-            
+
             <div class="card-footer">
                 <div class="text-center">
                     <a class="text-muted" href="<?php echo base_url('auth/forgotpassword'); ?>">Lupa Password?</a>

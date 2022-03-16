@@ -18,7 +18,7 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>No. Handphone</th>
+                    <th>Whatsapp</th>
                     <th>Status</th>
                     <th width="25%">Action</th>
                 </tr>
@@ -27,8 +27,8 @@
             foreach ($list_seller as $data) { ?>
                 <tr>
                     <td><?php echo $no; ?></td>
-                    <td><?php echo $data->user_name; ?></td>
-                    <td><?php echo $data->user_phone; ?></td>
+                    <td><?php echo $data->fullname; ?></td>
+                    <td><?php echo $data->whatsapp; ?></td>
                     <td>
                         <?php if ($data->is_active == 1) : ?>
                             <span class="badge badge-success">Aktif</span>

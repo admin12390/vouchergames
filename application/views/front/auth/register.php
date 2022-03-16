@@ -12,19 +12,14 @@ $meta = $this->meta_model->get_meta();
                 <?php
                 echo form_open('auth/register',  array('class' => 'needs-validation', 'novalidate' => 'novalidate'))
                 ?>
-                <div class="form-group">
-                    <select class="form-control custom-select" name="user_title" value="" required>
-                        <option value=''>--Pilih Title --</option>
-                        <option value='Bapak'>Bapak</option>
-                        <option value='Ibu'>Ibu</option>
-                        <option value='Saudara'>Saudara</option>
-                        <option value='Saudari'>Saudari</option>
 
-                    </select>
-                    <div class="invalid-feedback">Silahkan Pilih Title</div>
-                </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="user_name" placeholder="Nama Lengkap" value="<?php echo set_value('user_name'); ?>" required>
+                    <input type="text" class="form-control" name="fullname" placeholder="Nama Lengkap" value="<?php echo set_value('fullname'); ?>" required>
+                    <div class="invalid-feedback">Silahkan Masukan Nama Lengkap</div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="whatsapp" placeholder="Whatsapp" value="<?php echo set_value('whatsapp'); ?>" required>
                     <div class="invalid-feedback">Silahkan Masukan Nama Lengkap</div>
                 </div>
 
@@ -42,9 +37,9 @@ $meta = $this->meta_model->get_meta();
                         <div class="invalid-feedback">Ulangi Password</div>
                     </div>
                 </div>
-                <a href="#" class="btn btn-info btn-block">
+                <button type="submit" class="btn btn-info btn-block">
                     Daftar Sekarang
-                </a>
+                </button>
 
                 <?php echo form_close() ?>
                 <hr>
@@ -57,5 +52,4 @@ $meta = $this->meta_model->get_meta();
             </div>
         </div>
     </div>
-
 </div>

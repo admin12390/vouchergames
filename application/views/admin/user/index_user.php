@@ -25,7 +25,7 @@
             foreach ($list_user as $list_user) { ?>
                 <tr>
                     <td><?php echo $no; ?></td>
-                    <td><?php echo $list_user->user_name; ?></td>
+                    <td><?php echo $list_user->fullname; ?></td>
                     <td><?php echo $list_user->role; ?></td>
                     <td>
 

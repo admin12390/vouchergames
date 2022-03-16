@@ -13,7 +13,7 @@ $meta = $this->meta_model->get_meta();
         <div class="py-2 px-3 mt-5">
             <div class="mb-2"><img src="<?php echo base_url('assets/img/avatars/' . $user->user_image); ?>" alt="..." width="65" class="mr-3 rounded-circle shadow-sm">
                 <p>
-                <h5 class="m-0 text-muted"><?php echo $user->user_name; ?></h5>
+                <h5 class="m-0 text-muted"><?php echo $user->fullname; ?></h5>
                 <p class="badge badge-success font-weight-light mb-0 text-white"><?php echo $user->role; ?></p>
                 </p>
             </div>
@@ -29,7 +29,14 @@ $meta = $this->meta_model->get_meta();
             </li>
 
             <li class="nav-item">
-                <a href="<?php echo base_url('admin/transaksi'); ?>" class="nav-link  ">
+                <a href="<?php echo base_url('admin/product'); ?>" class="nav-link  ">
+                    <i class="bi-controller mr-3  fa-fw"></i>
+                    Product
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?php echo base_url('admin/transaction'); ?>" class="nav-link  ">
                     <i class="bi-clipboard-data mr-3  fa-fw"></i>
                     Transaksi
                 </a>
@@ -40,37 +47,6 @@ $meta = $this->meta_model->get_meta();
                     Bank
                 </a>
             </li>
-
-
-
-            <li class="nav-item" data-toggle="collapse" href="#collapseMobil" role="button" aria-expanded="false" aria-controls="collapseMobil">
-                <a href="#" class="nav-link  d-flex w-100 justify-content-between ">
-                    <div><i class="ti-car mr-3  fa-fw"></i> Mobil </div>
-                    <i class="ti-angle-right my-auto small"></i>
-                </a>
-            </li>
-
-            <ul class="collapse" id="collapseMobil">
-                <li class="nav-item">
-                    <a href="<?php echo base_url('admin/mobil'); ?>" class="nav-link  ">
-                        <i class="ti-car mr-3  fa-fw"></i>
-                        Data Mobil
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo base_url('admin/jenismobil'); ?>" class="nav-link  ">
-                        <i class="bi-bookmarks mr-3  fa-fw"></i>
-                        Jenis Mobil
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo base_url('admin/merek'); ?>" class="nav-link  ">
-                        <i class="bi-lightbulb mr-3  fa-fw"></i> Merek Mobil
-                    </a>
-                </li>
-
-            </ul>
-
 
 
             <li class="nav-item" data-toggle="collapse" href="#collapseBerita" role="button" aria-expanded="false" aria-controls="collapseBerita">
@@ -147,18 +123,6 @@ $meta = $this->meta_model->get_meta();
             </li>
 
             <ul class="collapse" id="collapseExample">
-
-                <li class="nav-item">
-                    <a href="<?php echo base_url('admin/lamasewa'); ?>" class="nav-link  ">
-                        <i class="bi-record"></i> Lama Sewa
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo base_url('admin/jamsewa'); ?>" class="nav-link  ">
-                        <i class="bi-record"></i> Jam Sewa
-                    </a>
-                </li>
-
                 <li class="nav-item">
                     <a href="<?php echo base_url('admin/link'); ?>" class="nav-link  ">
                         <i class="bi-record"></i>
@@ -171,12 +135,7 @@ $meta = $this->meta_model->get_meta();
                         Menu
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?php echo base_url('admin/ketentuan'); ?>" class="nav-link  ">
-                        <i class="bi-record"></i>
-                        Ketentuan
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a href="<?php echo base_url('admin/pengaturan'); ?>" class="nav-link  ">
                         <i class="bi-record"></i>

@@ -19,7 +19,7 @@ class Galery_model extends CI_Model
   }
   public function get_galery($limit, $start)
   {
-    $this->db->select('galery.*, user.user_name');
+    $this->db->select('galery.*, user.fullname');
     $this->db->from('galery');
     // Join
     $this->db->join('user', 'user.id = galery.user_id', 'LEFT');
@@ -53,7 +53,7 @@ class Galery_model extends CI_Model
   //Total Berita Main Page
   public function total_row()
   {
-    $this->db->select('galery.*, user.user_name');
+    $this->db->select('galery.*, user.fullname');
     $this->db->from('galery');
     // Join
     $this->db->join('user', 'user.id = galery.user_id', 'LEFT');
@@ -91,7 +91,7 @@ class Galery_model extends CI_Model
   // Data Berita yang di tampilkan di Front End
   public function galery($limit, $start)
   {
-    $this->db->select('galery.*, user.user_name');
+    $this->db->select('galery.*, user.fullname');
     $this->db->from('galery');
     // Join
     $this->db->join('user', 'user.id = galery.user_id', 'LEFT');
@@ -105,7 +105,7 @@ class Galery_model extends CI_Model
   //Total Berita Main Page
   public function total()
   {
-    $this->db->select('galery.*, user.user_name');
+    $this->db->select('galery.*, user.fullname');
     $this->db->from('galery');
     // Join
     $this->db->join('user', 'user.id = galery.user_id', 'LEFT');
@@ -117,7 +117,7 @@ class Galery_model extends CI_Model
   //Total Product Vendor
   public function total_mypgalery()
   {
-    $this->db->select('galery.*, user.user_name');
+    $this->db->select('galery.*, user.fullname');
     $this->db->from('galery');
     // Join
     $this->db->join('user', 'user.id = galery.user_id', 'LEFT');
@@ -129,7 +129,7 @@ class Galery_model extends CI_Model
   //Read Berita
   public function read($product_slug)
   {
-    $this->db->select('galery.*, user.user_name, user.user_phone, user.user_image');
+    $this->db->select('galery.*, user.fullname, user.user_phone, user.user_image');
     $this->db->from('galery');
     // Join
     $this->db->join('user', 'user.id = galery.user_id', 'LEFT');

@@ -26,13 +26,13 @@ $menu           = $this->menu_model->get_menu();
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="ti-user"></i> <?php echo $user->user_name; ?>
+              <i class="ti-user"></i> <?php echo $user->fullname; ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="<?php echo base_url('myaccount') ?>"> <i class="ri-user-line"></i> Profile</a>
               <a class="dropdown-item" href="<?php echo base_url('myaccount/update') ?>"> <i class="ri-draft-line"></i> Ubah Profile</a>
               <a class="dropdown-item" href="<?php echo base_url('myaccount/ubah_password') ?>"> <i class="ri-lock-password-line"></i> Ubah Password</a>
-              <a class="dropdown-item" href="<?php echo base_url('myaccount/transaksi') ?>"> <i class="ri-file-list-3-line"></i> Transaksi</a>
+              <a class="dropdown-item" href="<?php echo base_url('myaccount/transaction') ?>"> <i class="ri-file-list-3-line"></i> Transaksi</a>
 
               <div class="dropdown-divider"></div>
               <?php if ($user->role_id == 1) : ?>
@@ -42,10 +42,12 @@ $menu           = $this->menu_model->get_menu();
             </div>
           </li>
         <?php } else { ?>
+          <a class="btn btn-info text-white my-auto mr-5" href="<?php echo base_url('transaction'); ?>"> Cek Order</a>
+
           <li class="nav-item"><a class="nav-link" href="<?php echo base_url('auth') ?>"><i class="bi-box-arrow-in-right" style="font-size: 1.5rem;"></i> Login</a></li>
-          <span class="border-left border-secondary mr-3"></span>
-          <!-- <li class="nav-item"><a class="nav-link" href="<?php echo base_url('auth/register') ?>"> Daftar</a></li> -->
-          <a class="btn btn-info text-white my-auto" href="<?php echo base_url('transaksi'); ?>"> Cek Order</a>
+          <span class="border-right border-secondary"></span>
+          <li class="nav-item"><a class="nav-link" href="<?php echo base_url('auth/register') ?>"> <i class="bi bi-person" style="font-size: 1.5rem;"></i> Register</a></li>
+
         <?php } ?>
       </ul>
     </div>

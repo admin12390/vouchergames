@@ -15,7 +15,6 @@ class Home extends CI_Controller
     parent::__construct();
     $this->load->model('meta_model');
     $this->load->model('galery_model');
-    $this->load->model('mobil_model');
     $this->load->model('berita_model');
     $this->load->model('layanan_model');
   }
@@ -23,7 +22,6 @@ class Home extends CI_Controller
   {
     $meta                     = $this->meta_model->get_meta();
     $slider                   = $this->galery_model->slider();
-    $mobil_populer            = $this->mobil_model->mobil_populer();
     $berita                   = $this->berita_model->berita_home();
     $layanan                   = $this->layanan_model->get_layanan();
     $galery_featured            = $this->galery_model->featured();
@@ -34,7 +32,6 @@ class Home extends CI_Controller
         'keywords'              => $meta->title . ' - ' . $meta->tagline . ',' . $meta->keywords,
         'deskripsi'             => $meta->description,
         'slider'                =>  $slider,
-        'mobil_populer'         => $mobil_populer,
         'berita'                => $berita,
         'layanan'               => $layanan,
         'galery_featured'       => $galery_featured,
@@ -48,7 +45,6 @@ class Home extends CI_Controller
         'keywords'              => $meta->title . ' - ' . $meta->tagline . ',' . $meta->keywords,
         'deskripsi'             => $meta->description,
         'slider'                =>  $slider,
-        'mobil_populer'         => $mobil_populer,
         'berita'                => $berita,
         'layanan'               => $layanan,
         'galery_featured'       => $galery_featured,

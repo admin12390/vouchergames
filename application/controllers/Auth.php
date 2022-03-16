@@ -14,7 +14,7 @@ class Auth extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-		$this->load->model('pengaturan_model');
+		$this->load->model('setting_model');
 	}
 	public function index()
 	{
@@ -36,6 +36,7 @@ class Auth extends CI_Controller
 			'required|trim',
 			[
 				'required' 		=> 'Password harus di isi',
+				
 			]
 		);
 		if ($this->form_validation->run() == false) {
@@ -100,7 +101,7 @@ class Auth extends CI_Controller
 	}
 	public function register()
 	{
-		$send_email_register = $this->pengaturan_model->sendemail_status_register();
+		$send_email_register = $this->setting_model->sendemail_status_register();
 		if ($this->session->userdata('id')) {
 			redirect('myaccount');
 		}
@@ -185,7 +186,7 @@ class Auth extends CI_Controller
 	}
 	private function _sendEmail($token, $type)
 	{
-		$email_register = $this->pengaturan_model->email_register();
+		$email_register = $this->setting_model->email_register();
 		$config = [
 			'protocol'     	=> "$email_register->protocol",
 			'smtp_host'   	=> "$email_register->smtp_host",

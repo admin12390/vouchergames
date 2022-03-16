@@ -55,6 +55,19 @@
             ['view', ['fullscreen', 'codeview', 'help']]
         ]
     });
+    $('#summernote2').summernote({
+        tabsize: 2,
+        height: 130,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
 </script>
 
 

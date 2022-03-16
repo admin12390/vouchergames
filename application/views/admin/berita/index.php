@@ -31,7 +31,7 @@
                     <td><?php echo $no; ?></td>
                     <td><?php echo $data->berita_title; ?></td>
                     <td><?php echo $data->category_name; ?></td>
-                    <td><?php echo $data->user_name; ?></td>
+                    <td><?php echo $data->fullname; ?></td>
                     <td><?php echo date('d/m/Y', strtotime($data->date_created)); ?> <?php echo date('H:i:s', strtotime($data->date_created)); ?> WIB</td>
                     <td><?php echo $data->berita_views; ?></td>
                     <td>
@@ -54,4 +54,3 @@
     </div>
 
 </div>
-
